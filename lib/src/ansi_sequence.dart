@@ -21,6 +21,10 @@ final class AnsiSequences {
 
   static String moveCursorHome = _escape('H');
 
+  static String hideCursor = _escape('?25l');
+
+  static String showCursor = _escape('?25h');
+
   static String moveCursor({required int row, required int col}) =>
       _escape('%1\$s;%2\$sH', [row, col]);
 
