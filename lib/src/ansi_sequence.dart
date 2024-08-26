@@ -10,10 +10,10 @@ final class AnsiSequences {
   static const _csi = '['; // Control sequence introducer.
 
   static String foregroundColor(AnsiForegroundColor fgColor) =>
-      _escape('38;5;%1\$sm', [fgColor.code]);
+      _escape('1;%1\$sm', [fgColor.code]);
 
   static String backgroundColor(AnsiBackgroundColor bgColor) =>
-      _escape('48;5;%1\$sm', [bgColor.code]);
+      _escape('1;%1\$sm', [bgColor.code]);
 
   static String resetColor = _escape('0m');
 
