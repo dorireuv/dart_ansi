@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   test('red', () {
-    expect(AnsiPen.red('foo'), '\x1B[38;5;31mfoo\x1B[0m');
+    expect(AnsiPens.red('foo'), '\x1B[1;31mfoo\x1B[0m');
   });
 
   group('pen', () {
@@ -14,14 +14,14 @@ void main() {
     test('with fgColor and without bgColor', () {
       expect(
         pen('foo', fgColor: AnsiForegroundColor.red),
-        '\x1B[38;5;31mfoo\x1B[0m',
+        '\x1B[1;31mfoo\x1B[0m',
       );
     });
 
     test('without fgColor and with bgColor', () {
       expect(
         pen('foo', bgColor: AnsiBackgroundColor.red),
-        '\x1B[48;5;41mfoo\x1B[0m',
+        '\x1B[1;41mfoo\x1B[0m',
       );
     });
 
@@ -32,7 +32,7 @@ void main() {
           fgColor: AnsiForegroundColor.red,
           bgColor: AnsiBackgroundColor.red,
         ),
-        '\x1B[38;5;31m\x1B[48;5;41mfoo\x1B[0m',
+        '\x1B[1;31m\x1B[1;41mfoo\x1B[0m',
       );
     });
   });
